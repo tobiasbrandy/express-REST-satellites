@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+model Satellite {
+  @@map("satellite")
+  name          String          @id @db.VarChar(100)
+  posX          Decimal         @db.Decimal(6, 2) @map("position_x")
+  posY          Decimal         @db.Decimal(6, 2) @map("position_y")
+  com           SatelliteCom?
+}
+
+model SatelliteCom {
+  @@map("satellite_com")
+  satelliteName String          @id @db.VarChar(100) @map("satellite")
+  receivedAt    DateTime        @updatedAt @map("received_at")
+  distance      Decimal         @db.Decimal(6, 2)
+  message       String[]        @db.VarChar(50)
+  satellite     Satellite       @relation(fields: [satelliteName], references: [name])
+}
