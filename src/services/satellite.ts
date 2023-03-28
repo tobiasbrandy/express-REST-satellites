@@ -1,5 +1,5 @@
-import { AppCtx } from "../config/context";
 import { Satellite } from "@prisma/client";
+import { AppCtx } from "../config/context";
 
 export type SatelliteServiceCtx = Pick<AppCtx, 'prisma'>;
 type Ctx = SatelliteServiceCtx;

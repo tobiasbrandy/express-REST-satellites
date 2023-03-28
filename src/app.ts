@@ -1,18 +1,18 @@
-import express from 'express';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
+import express from 'express';
 import { createHttpTerminator } from 'http-terminator';
 
-import { appCtx } from './config/context'
 import { PrismaClient } from '@prisma/client';
+import { appCtx } from './config/context';
 
 import * as satelliteService from './services/satellite';
 import * as satelliteComService from './services/satelliteCom';
 
 import { globalErrorHandler } from './errors/handlers';
 
-import satellitesRouter from './routers/satellites';
 import satelliteComsRouter from './routers/satelliteComs';
+import satellitesRouter from './routers/satellites';
 
 dotenvExpand.expand(dotenv.config());
 const port = process.env.PORT || "8080";

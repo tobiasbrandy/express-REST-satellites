@@ -1,7 +1,7 @@
-import { mock, mockDeep, DeepMockProxy, MockProxy } from 'jest-mock-extended'
+import { DeepMockProxy, mock, mockDeep, MockProxy } from 'jest-mock-extended';
 import { AppCtx } from '../../src/config/context';
 
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 import { SatelliteService } from '../services/satellite';
 import { SatelliteComService } from '../services/satelliteCom';
 

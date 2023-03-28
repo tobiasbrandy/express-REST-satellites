@@ -1,11 +1,11 @@
-import express, { Express, ErrorRequestHandler } from 'express';
-import runMiddleware from '../utils/runMiddleware';
-import { createMockCtx, MockCtx } from '../utils/mockContext'
+import express, { Express } from 'express';
 import { appCtx, AppCtx } from '../../src/config/context';
+import { createMockCtx, MockCtx } from '../utils/mockContext';
+import runMiddleware from '../utils/runMiddleware';
 
-import satellitesRouter from '../../src/routers/satellites';
 import { Prisma, Satellite } from '@prisma/client';
 import { globalErrorHandler } from '../../src/errors/handlers';
+import satellitesRouter from '../../src/routers/satellites';
 
 let app: Express;
 let mockCtx: MockCtx, ctx: AppCtx;

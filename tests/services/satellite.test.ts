@@ -1,5 +1,5 @@
-import { createMockCtx, MockCtx } from '../utils/mockContext'
 import { AppCtx } from '../config/context';
+import { createMockCtx, MockCtx } from '../utils/mockContext';
 
 import { Prisma, Satellite } from '@prisma/client';
 import { findAll } from '../../src/services/satellite';

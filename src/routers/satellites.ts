@@ -2,9 +2,8 @@ import express from 'express';
 import z from 'zod';
 
 import { AppCtx } from '../config/context';
-import { ApplicationError } from '../errors/models';
-import { SatelliteSchema } from '../validation/satellite';
 import { SatelliteServiceCtx } from '../services/satellite';
+import { SatelliteSchema } from '../validation/satellite';
 import { defaultRequestHandler as reqHandler, DefaultRequestHandler as ReqHandler } from './utils';
 
 export type SatellitesRouterCtx = Pick<AppCtx, 'satelliteService'> & SatelliteServiceCtx;
